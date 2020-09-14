@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<h1 class="yellowRedText text-center">Peter Steele</h1>
+<h3 class="yellowRedText text-center">Web Developer, Software Developer, Tinkerer, Photographer</h3>
+
+<div class="row">
+    <p class="col align-self-center">
+        I have been a web developer since 2008, and have built many websites for businesses over the past decade. Everything from custom coded websites, to WordPress and Joomla sites. I also started to get into programming and photography around this time as well for hobbies, and have become proficient in both. I enjoy Laravel and Bootstrap for web development, Python and C# for programming, and Pentax for my photography gear. I also tinker around with Arduino, building lots of neat little projects for around the house. If you would like to work with me, please contact me today or view my portfolio and resume by clicking below!
+    </p>
+</div>
+<div class="row">
+    <div class="col text-center">
+        <button type="button" onclick="location.href='@Url.Action("Contact","Home")'" class="btn introButton cyberGrape whiteText text-center mr-2">Contact Me</button>
+        <button type="button" onclick="location.href='@Url.Action("About","Home")'" class="btn introButton cyberGrape whiteText text-center">About Me</button>
+    </div>
+</div>
+
+<div class="row mt-5 mx-n5">
+    <div class="col-lg-4 col-sm-12">
+        <div class="col-12 blueSapphire services">
+            <h3 class="text-center yellowRedText">Web Devlopment</h3>
+            <p>Web Development is a critical peice that should be in your toolkit for a profitable and ever expanding business. 88% of consumers reasearch thier products and services online, before making a purchase, be that in store or online. It is vital that businesses have a web presence of some form and target their market effectively to appear in search results. With over 12 years of experience building, maintaining, and optimizing websites, I can provide affordable services for your bussiness and get you on the web in no time! Contact us today to discuss your needs and goals.</p>
+        </div>
+    </div>
+    <div class="col-lg-4 col-sm-12">
+        <div class="col-12 blueSapphire services">
+            <h3 class="text-center yellowRedText">Software Devlopment</h3>
+            <p>Tired of clunky software that predates your business operations and doesn't seem to have been updated in just as long? Tired of being told that your requrest for a new feature is being worked on, but nothing has come of it? At PBSteele Dev, LLC. we can tailor make your dream software and simplify your business operations in the process. Anything from interal tools to external, customer facing services, we can design anything you might desire. Contact us today for a free consultation and see how we can help you recover lost time and productivity from outdated software! </p>
+        </div>
+    </div>
+    <div class="col-lg-4 col-sm-12">
+        <div class="col-12 blueSapphire services">
+            <h3 class="text-center yellowRedText">Embedded Systems</h3>
+            <p>IoT is all the rage these days. Anything from smart mirrors in your bathroom displaying weather and tweets, to remote operated coffee makers, its one of the fastest growing trends in the world. We have extensive experience creating and developing embedded systems and IoT devices to help make your life and your business easier. Get tailored solutions for your unique needs without having to settle for an off the shelf solution that doesn't fit. Contact us today for a consultation regarding your needs and wants. We can make it happen, and bring your routines into the 21st century. </p>
+        </div>
+    </div>
+</div>

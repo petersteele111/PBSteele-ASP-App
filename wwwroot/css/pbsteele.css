@@ -1,0 +1,95 @@
+﻿body {
+    background: url('../img/background - resized.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+/* 
+    Main Colors for the Website 
+    Space Cadet: #1F2041 
+    Cyber Grape: #4B3F72 
+    Max Yellow Red: #FFC857 
+    Viridian Green: #119DA4 
+    Blue Sapphire: #19647E 
+*/
+
+.spaceCadet {
+    background-color: #1F2041 !important;
+}
+
+.cyberGrape {
+    background-color: #4B3F72 !important;
+}
+
+.yellowRed {
+    background-color: #FFC857 !important;
+}
+
+.viridianGreen {
+    background-color: #119DA4 !important;
+}
+
+.blueSapphire {
+    background-color: #19647E !important;
+}
+
+.spaceCadetText {
+    color: #1F2041 !important;
+}
+
+.cyberGrapeText {
+    color: #4B3F72 !important;
+}
+
+.yellowRedText {
+    color: #FFC857 !important;
+}
+
+.viridianGreenText {
+    color: #119DA4 !important;
+}
+
+.blueSapphireText {
+    color: #19647E !important;
+}
+
+p {
+    color: #FFF;
+}
+
+.whiteText {
+    color: #FFF;
+}
+
+.introButton:hover {
+    background-color: #393056 !important;
+    color: #FFF;
+}
+
+.services {
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+    padding: 1rem;
+}
+
+h1 {
+    color: #FFC857 !important;
+}
+
+h2 {
+    color: #18187C !important;
+}
+
+h3 {
+    color: #000000 !important;
+}
+
+li {
+    color: #FFF !important;
+}
+
+.privacy {
+    background-color: rgba(255,255,255,.2);
+    padding: 2rem;
+}

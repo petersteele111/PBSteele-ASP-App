@@ -1,0 +1,78 @@
+﻿@{
+    ViewData["Title"] = "Contact";
+}
+<div class="row">
+    <div class="col-12 text-center">
+        <h1>Contact Me</h1>
+    </div>
+    
+</div>
+<div class="row mt-5">
+    <div class="col-sm-12">
+        <form action="#" method="POST">
+            <div class="form-group row">
+                <label for="firstName" class="col-xs-12 offset-lg-1 col-lg-2 col-form-label contact-label whiteText">First Name</label>
+                <div class="col-xs-12 col-lg-8">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <i class="fa fa-address-card"></i>
+                            </div>
+                        </div>
+                        <input id="firstName" name="firstName" placeholder="John" type="text" class="form-control" aria-describedby="firstNameHelpBlock" required="required">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="lastName" class="col-xs-12 offset-lg-1 col-lg-2 col-form-label contact-label whiteText">Last Name</label>
+                <div class="col-xs-12 col-lg-8">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <i class="fa fa-address-card"></i>
+                            </div>
+                        </div>
+                        <input id="lastName" name="lastName" placeholder="Doe" type="text" class="form-control" aria-describedby="lastNameHelpBlock" required="required">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="phone" class="col-xs-12 offset-lg-1 col-lg-2 col-form-label contact-label whiteText">Phone</label>
+                <div class="col-xs-12 col-lg-8">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <i class="fa fa-mobile-alt"></i>
+                            </div>
+                        </div>
+                        <input id="phone" name="phone" placeholder="(XXX) XXX-XXXX" type="text" class="form-control" aria-describedby="phoneHelpBlock" required="required">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="email" class="col-xs-12 offset-lg-1 col-lg-2 col-form-label contact-label whiteText">Email</label>
+                <div class="col-xs-12 col-lg-8">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <i class="fa fa-envelope"></i>
+                            </div>
+                        </div>
+                        <input id="email" name="email" placeholder="JohnDoe@example.com" type="text" class="form-control" aria-describedby="emailHelpBlock" required="required">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="question" class="col-xs-12 offset-lg-1 col-lg-2 col-form-label contact-label whiteText">Question</label>
+                <div class="col-xs-12 col-lg-8">
+                    <textarea id="question" name="question" cols="40" rows="10" class="form-control" aria-describedby="questionHelpBlock" required="required"></textarea>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-xs-2 offset-lg-3 col-8">
+                    <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
