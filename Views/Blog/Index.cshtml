@@ -1,0 +1,66 @@
+﻿@model IEnumerable<PBsteele.Models.Blog>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_BlogLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+        <h1>Blog</h1>
+    </div>
+    <div class="col-12">
+        <p>
+        <a class="btn btn-primary" asp-action="Create">Create New</a>
+        </p>
+    </div>
+</div>
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Created)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastModified)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Post)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Author)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Created)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastModified)
+            </td>
+            <td style="width: 600px; word-wrap: break-word">
+                @Html.DisplayFor(modelItem => item.Post)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.BlogID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.BlogID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.BlogID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
