@@ -13,6 +13,7 @@ namespace PBsteele.Models
         public DateTime Created { get; set; }
         public DateTime LastModified { get; set; }
         public string Post { get; set; }
-        public string Author { get; set; }
+        public int AuthorId { get; set; }
+        public Author Author { get; set; }
     }
 }

@@ -2,21 +2,14 @@
 
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_BlogLayout.cshtml";
 }
 
-<div class="row">
-    <div class="col-12">
-        <h1>Blog</h1>
-    </div>
-    <div class="col-12">
-        <p>
-        <a class="btn btn-primary" asp-action="Create">Create New</a>
-        </p>
-    </div>
-</div>
+<h1>Index</h1>
 
-<table class="table table-dark">
+<p>
+    <a asp-action="Create" class="text-light">Create New</a>
+</p>
+<table class="table privacy whiteText">
     <thead>
         <tr>
             <th>
@@ -49,11 +42,11 @@
             <td>
                 @Html.DisplayFor(modelItem => item.LastModified)
             </td>
-            <td style="width: 600px; word-wrap: break-word">
+            <td>
                 @Html.DisplayFor(modelItem => item.Post)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Author)
+                @Html.DisplayFor(modelItem => item.Author.Name)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.BlogID">Edit</a> |

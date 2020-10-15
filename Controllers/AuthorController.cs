@@ -9,23 +9,22 @@ using PBsteele.Models;
 
 namespace PBsteele.Controllers
 {
-    public class BlogController : Controller
+    public class AuthorController : Controller
     {
         private readonly PBSteeleContext _context;
 
-        public BlogController(PBSteeleContext context)
+        public AuthorController(PBSteeleContext context)
         {
             _context = context;
         }
 
-        // GET: Blog
+        // GET: Author
         public async Task<IActionResult> Index()
         {
-            var pBSteeleContext = _context.Blog.Include(b => b.Author);
-            return View(await pBSteeleContext.ToListAsync());
+            return View(await _context.Author.ToListAsync());
         }
 
-        // GET: Blog/Details/5
+        // GET: Author/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,42 +32,39 @@ namespace PBsteele.Controllers
                 return NotFound();
             }
 
-            var blog = await _context.Blog
-                .Include(b => b.Author)
-                .FirstOrDefaultAsync(m => m.BlogID == id);
-            if (blog == null)
+            var author = await _context.Author
+                .FirstOrDefaultAsync(m => m.AuthorId == id);
+            if (author == null)
             {
                 return NotFound();
             }
 
-            return View(blog);
+            return View(author);
         }
 
-        // GET: Blog/Create
+        // GET: Author/Create
         public IActionResult Create()
         {
-            ViewData["AuthorId"] = new SelectList(_context.Author, "AuthorId", "AuthorId");
             return View();
         }
 
-        // POST: Blog/Create
+        // POST: Author/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("BlogID,Title,Created,LastModified,Post,AuthorId")] Blog blog)
+        public async Task<IActionResult> Create([Bind("AuthorId,Name,Email,Phone")] Author author)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(blog);
+                _context.Add(author);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AuthorId"] = new SelectList(_context.Author, "AuthorId", "AuthorId", blog.AuthorId);
-            return View(blog);
+            return View(author);
         }
 
-        // GET: Blog/Edit/5
+        // GET: Author/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -76,23 +72,22 @@ namespace PBsteele.Controllers
                 return NotFound();
             }
 
-            var blog = await _context.Blog.FindAsync(id);
-            if (blog == null)
+            var author = await _context.Author.FindAsync(id);
+            if (author == null)
             {
                 return NotFound();
             }
-            ViewData["AuthorId"] = new SelectList(_context.Author, "AuthorId", "AuthorId", blog.AuthorId);
-            return View(blog);
+            return View(author);
         }
 
-        // POST: Blog/Edit/5
+        // POST: Author/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("BlogID,Title,Created,LastModified,Post,AuthorId")] Blog blog)
+        public async Task<IActionResult> Edit(int id, [Bind("AuthorId,Name,Email,Phone")] Author author)
         {
-            if (id != blog.BlogID)
+            if (id != author.AuthorId)
             {
                 return NotFound();
             }
@@ -101,12 +96,12 @@ namespace PBsteele.Controllers
             {
                 try
                 {
-                    _context.Update(blog);
+                    _context.Update(author);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!BlogExists(blog.BlogID))
+                    if (!AuthorExists(author.AuthorId))
                     {
                         return NotFound();
                     }
@@ -117,11 +112,10 @@ namespace PBsteele.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AuthorId"] = new SelectList(_context.Author, "AuthorId", "AuthorId", blog.AuthorId);
-            return View(blog);
+            return View(author);
         }
 
-        // GET: Blog/Delete/5
+        // GET: Author/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -129,31 +123,30 @@ namespace PBsteele.Controllers
                 return NotFound();
             }
 
-            var blog = await _context.Blog
-                .Include(b => b.Author)
-                .FirstOrDefaultAsync(m => m.BlogID == id);
-            if (blog == null)
+            var author = await _context.Author
+                .FirstOrDefaultAsync(m => m.AuthorId == id);
+            if (author == null)
             {
                 return NotFound();
             }
 
-            return View(blog);
+            return View(author);
         }
 
-        // POST: Blog/Delete/5
+        // POST: Author/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var blog = await _context.Blog.FindAsync(id);
-            _context.Blog.Remove(blog);
+            var author = await _context.Author.FindAsync(id);
+            _context.Author.Remove(author);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool BlogExists(int id)
+        private bool AuthorExists(int id)
         {
-            return _context.Blog.Any(e => e.BlogID == id);
+            return _context.Author.Any(e => e.AuthorId == id);
         }
     }
 }
